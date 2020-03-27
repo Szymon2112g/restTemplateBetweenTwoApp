@@ -1,17 +1,22 @@
 package com.example.Receiver.Model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Post {
+
+    @Id
+    private String id;
     private int userId;
-    private int id;
     private String title;
     private String body;
 
     public Post() {
     }
 
-    public Post(int userId, int id, String title, String body) {
+    public Post(int userId, String title, String body) {
         this.userId = userId;
-        this.id = id;
         this.title = title;
         this.body = body;
     }
@@ -24,11 +29,11 @@ public class Post {
         this.userId = userId;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
